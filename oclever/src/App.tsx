@@ -7,7 +7,7 @@ import { AppBarComponent, SideBar } from './components';
 export const App: React.FC = (): JSX.Element => {
 
   const [ThemeMode, setThemeMode] = useState<"light" | "dark">("dark")
-  const [sideBarToggle, setsideBarToggle] = useState(false)
+  const [sideBarToggle, setsideBarToggle] = useState(true)
 
   const theme = createTheme({
     palette: {

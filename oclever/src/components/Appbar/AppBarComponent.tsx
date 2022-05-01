@@ -14,8 +14,8 @@ export const AppBarComponent: React.FC<Props> = ({
     handleDrawerToggle, onThemeChange, isDarkMode,
 }): JSX.Element => {
     return (
-        <AppBar position="static" variant="elevation">
-            <Toolbar variant="dense">
+        <AppBar position="static" variant="elevation" sx={{  minHeight: 64}}>
+            <Toolbar variant="dense" sx={{  minHeight: 64}}>
                 <IconButton color='inherit' onClick={handleDrawerToggle} edge="start" >
                     <MenuIcon />
                 </IconButton>
