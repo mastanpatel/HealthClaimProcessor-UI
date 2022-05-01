@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import { createTheme, CssBaseline, TextField, ThemeProvider } from '@mui/material';
-import { AppBarComponent } from './components';
+import { AppBarComponent, SideBar } from './components';
 
 
 export const App: React.FC = (): JSX.Element => {
 
   const [ThemeMode, setThemeMode] = useState<"light" | "dark">("dark")
+  const [sideBarToggle, setsideBarToggle] = useState(false)
 
   const theme = createTheme({
     palette: {
@@ -19,7 +20,8 @@ export const App: React.FC = (): JSX.Element => {
 
   const handleDrawerToggle = React.useCallback(() => {
     //toggle drawer here
-  }, [])
+    setsideBarToggle(!sideBarToggle);
+  }, [sideBarToggle])
 
   const onThemeChange = React.useCallback(() => {
     //toggle theme here
@@ -34,6 +36,7 @@ export const App: React.FC = (): JSX.Element => {
           onThemeChange={onThemeChange}
           isDarkMode={ThemeMode === "dark"}
         />
+        <SideBar isOpen={sideBarToggle} handleDrawerToggle={handleDrawerToggle} />
       </CssBaseline>
     </ThemeProvider>
   );

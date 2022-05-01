@@ -16,11 +16,11 @@ export const AppBarComponent: React.FC<Props> = ({
     return (
         <AppBar position="static" variant="elevation">
             <Toolbar variant="dense">
-                <IconButton color='inherit' onClick={handleDrawerToggle} edge="start">
+                <IconButton color='inherit' onClick={handleDrawerToggle} edge="start" >
                     <MenuIcon />
                 </IconButton>
                 <Typography variant='subtitle1' component="div" sx={{ flexGrow: 1 }}>
-                    O'Clever App
+                    O'Clever
                 </Typography>
                 {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
                 <ThemeSwitch size='small' onChange={onThemeChange} color="default" />
